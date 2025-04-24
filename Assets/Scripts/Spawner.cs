@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private int _directionMovement = 0;
+    [SerializeField] private Cube _prefab;
     [SerializeField] private Color _colorCube;
 
     public void Spawn()
     {
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.position = transform.position;
-        cube.transform.rotation = Quaternion.Euler(0, _directionMovement, 0);
-        cube.AddComponent<Rigidbody>();
-        cube.AddComponent<Cube>();
-        cube.GetComponent<Renderer>().material.color = _colorCube;
+        int fullSpin = 360;
+        int directionMovement = Random.Range(0, fullSpin + 1);
+        GameObject spawnedCube = Instantiate(_prefab.gameObject, transform.position, Quaternion.Euler(0, directionMovement, 0));
+        spawnedCube.GetComponent<Renderer>().material.color = _colorCube;
     }
 }

@@ -10,7 +10,7 @@ public class RandomSpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("Spawner—all", _timeInterval, _timeInterval);
+        InvokeRepeating(nameof(Spawner—all), _timeInterval, _timeInterval);
     }
 
     private void Spawner—all()
