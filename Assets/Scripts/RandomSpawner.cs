@@ -10,12 +10,16 @@ public class RandomSpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnerÑall), _timeInterval, _timeInterval);
+        StartCoroutine(SpawnerÑall(_timeInterval));
     }
 
-    private void SpawnerÑall()
+    IEnumerator SpawnerÑall(float intervalSeconds)
     {
-        int call = Random.Range(0, enemyList.Count);
-        enemyList[call].Spawn();
+        while (true)
+        {
+            int call = Random.Range(0, enemyList.Count);
+            enemyList[call].Spawn();
+            yield return new WaitForSeconds(intervalSeconds);
+        }
     }
 }

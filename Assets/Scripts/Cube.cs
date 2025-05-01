@@ -6,15 +6,17 @@ using static UnityEngine.GraphicsBuffer;
 public class Cube : MonoBehaviour
 {
     [SerializeField] private int _directionMovement;
-    [SerializeField] public Transform _target;
+    [SerializeField] private Transform _target;
 
     private int _speed = 5;
 
+    public Transform Target { get => _target; set => _target = value; }
+
     private void Update()
     {
-        if (_target != null)
+        if (Target != null)
         {
-            transform.LookAt(_target);
+            transform.LookAt(Target);
         }
 
         transform.position += transform.forward * _speed * Time.deltaTime;

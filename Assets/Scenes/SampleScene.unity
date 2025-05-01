@@ -355,10 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330c286354a81a34e8ac229a43edc491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 28154869}
+  _waypoints:
   - {fileID: 300186135}
-  speed: 5
+  - {fileID: 1932164438}
+  _speed: 10
 --- !u!136 &439635381
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -844,11 +844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330c286354a81a34e8ac229a43edc491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1055815582}
-  - {fileID: 1932164438}
+  _waypoints:
+  - {fileID: 1462471253}
   - {fileID: 1718045123}
-  speed: 5
+  _speed: 10
 --- !u!136 &1096575480
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1088,11 +1087,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330c286354a81a34e8ac229a43edc491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
+  _waypoints:
   - {fileID: 1956701807}
   - {fileID: 28154869}
-  - {fileID: 1932164438}
-  speed: 5
+  _speed: 10
 --- !u!1 &1718045122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,9 +1229,9 @@ SceneRoots:
   - {fileID: 300186135}
   - {fileID: 1932164438}
   - {fileID: 889959008}
-  - {fileID: 1636394294}
-  - {fileID: 439635384}
   - {fileID: 1462471253}
   - {fileID: 1718045123}
-  - {fileID: 1096575483}
   - {fileID: 1055815582}
+  - {fileID: 1636394294}
+  - {fileID: 439635384}
+  - {fileID: 1096575483}

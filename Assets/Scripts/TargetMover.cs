@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class TargetMover : MonoBehaviour
 {
-    public Transform[] waypoints;
-    public float speed = 10.0f;   
-    private int currentWaypointIndex = 0;
+    [SerializeField] private Transform[] _waypoints;
+    [SerializeField] private float _speed = 10.0f;   
+    private int _currentWaypointIndex = 0;
 
-    void Update()
+    private void Update()
     {
-        if (waypoints.Length == 0) return;
+        if (_waypoints.Length == 0) return;
         {
-            Vector3 target = waypoints[currentWaypointIndex].position;
-            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            Vector3 target = _waypoints[_currentWaypointIndex].position;
+            transform.position = Vector3.MoveTowards(transform.position, target, _speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, target) < 0.01f)
+            if ((transform.position - target).sqrMagnitude < 0.01f)
             {
-                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
             }
         }
     }
