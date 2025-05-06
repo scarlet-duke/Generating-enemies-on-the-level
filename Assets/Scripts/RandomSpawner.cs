@@ -13,9 +13,9 @@ public class RandomSpawner : MonoBehaviour
         StartCoroutine(Spawner—all(_timeInterval));
     }
 
-    IEnumerator Spawner—all(float intervalSeconds)
+    private IEnumerator Spawner—all(float intervalSeconds)
     {
-        while (true)
+        while (enabled)
         {
             int call = Random.Range(0, enemyList.Count);
             enemyList[call].Spawn();

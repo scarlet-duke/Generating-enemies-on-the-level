@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     {
         int fullSpin = 360;
         int directionMovement = Random.Range(0, fullSpin + 1);
-        GameObject spawnedCube = Instantiate(_prefab.gameObject, transform.position, Quaternion.Euler(0, directionMovement, 0));
+        Cube spawnedCube = Instantiate(_prefab, transform.position, Quaternion.Euler(0, directionMovement, 0));
         spawnedCube.GetComponent<Renderer>().material.color = _colorCube;
-        spawnedCube.GetComponent<Cube>().Target = _targetSpawner;
+        spawnedCube.GetComponent<Cube>().Initialized(_targetSpawner);
     }
 }
