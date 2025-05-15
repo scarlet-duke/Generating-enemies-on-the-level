@@ -5,10 +5,14 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private int _directionMovement;
     private Transform _target;
 
     private int _speed = 5;
+
+    private void Awake()
+    {
+        GetComponent<Renderer>().material.color = Color.red;
+    }
 
     private void Update()
     {
@@ -20,12 +24,7 @@ public class Cube : MonoBehaviour
         transform.position += transform.forward * _speed * Time.deltaTime;
     }
 
-    private void Awake()
-    {
-        GetComponent<Renderer>().material.color = Color.red;
-    }
-
-    public void Initialized(Transform target)
+    public void Initialize(Transform target)
     {
         _target = target;
     }
