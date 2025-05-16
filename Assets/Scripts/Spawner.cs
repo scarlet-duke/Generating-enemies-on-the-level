@@ -6,14 +6,12 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Cube _prefab;
     [SerializeField] private Color _colorCube;
-    [SerializeField] private Transform _targetSpawner;
+    [SerializeField] private TargetMover _targetSpawner;
 
     public void Spawn()
     {
-        int fullSpin = 360;
-        int directionMovement = Random.Range(0, fullSpin + 1);
-        Cube spawnedCube = Instantiate(_prefab, transform.position, Quaternion.Euler(0, directionMovement, 0));
+        Cube spawnedCube = Instantiate(_prefab, transform.position, Quaternion.identity);
         spawnedCube.GetComponent<Renderer>().material.color = _colorCube;
-        spawnedCube.GetComponent<Cube>().Initialize(_targetSpawner);
+        spawnedCube.Initialize(_targetSpawner);
     }
 }
